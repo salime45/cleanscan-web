@@ -3,9 +3,9 @@ import Link from "next/link";
 import SiteHeader from "@/components/site-header";
 
 export const metadata: Metadata = {
-  title: "Restaurant Cleaning Checklist Templates",
+  title: "Free Restaurant Cleaning Checklist Templates (PDF & Printable)",
   description:
-    "Free printable restaurant cleaning templates and a downloadable cleaning log PDF for restrooms, kitchens, opening, closing, and inspection readiness. Use them digitally in CleanScan.",
+    "Free printable restaurant cleaning checklist templates with a downloadable PDF cleaning log for kitchens, restrooms, opening, closing, and inspection readiness.",
   alternates: { canonical: "/templates/" },
 };
 
@@ -74,6 +74,11 @@ const templates = [
 
 const faqs = [
   {
+    question: "Is there a free printable restaurant cleaning checklist PDF?",
+    answer:
+      "Yes. The free cleaning log PDF can be downloaded directly and used with the restaurant cleaning checklist templates on this page. No account is required to download the PDF.",
+  },
+  {
     question: "What is a restaurant cleaning checklist template?",
     answer:
       "A restaurant cleaning checklist template is a reusable task list that defines what needs to be cleaned, when it should happen, and which areas or roles are responsible.",
@@ -133,23 +138,47 @@ export default function TemplatesIndexPage() {
     <main>
       <SiteHeader />
       <section className="solutions-hero wrap">
-        <p className="article-kicker">Templates</p>
-        <h1>Restaurant Cleaning Checklist Templates</h1>
+        <p className="article-kicker">Free Templates</p>
+        <h1>Free Restaurant Cleaning Checklist Templates</h1>
         <p className="article-lead">
-          Free printable cleaning checklist and log templates for restaurant managers, including daily
-          cleaning, restroom checks, kitchen sanitation, opening routines, closing routines, and
-          inspection readiness.
+          Printable restaurant cleaning checklists for daily, weekly, and monthly routines. Download
+          the free PDF cleaning log or choose a template for kitchens, restrooms, opening, closing,
+          and health inspection readiness.
         </p>
         <div className="hero-actions">
           <a className="hero-cta" href="/downloads/cleaning-log.pdf" download>
-            Download Free Cleaning Log PDF
+            Download Free Printable PDF
           </a>
-          <Link className="outline-cta" href="#choose-template">
-            Choose a Template
+          <Link className="outline-cta" href="/templates/restaurant-cleaning-checklist/">
+            View Restaurant Cleaning Checklist
           </Link>
           <Link className="outline-cta" href="/solutions/restaurant-cleaning-management/">
-            Use Templates in CleanScan
+            Use Checklists Digitally
           </Link>
+        </div>
+        <p>
+          Free download. No signup required for the PDF. Use the printable version on paper or turn
+          the same routine into recurring digital tasks with CleanScan.
+        </p>
+      </section>
+
+      <section className="section wrap">
+        <div className="section-heading">
+          <p className="article-kicker">Printable PDF</p>
+          <h2>Restaurant cleaning checklist PDF and printable templates</h2>
+          <p>
+            Start with the master restaurant cleaning checklist for a complete daily, weekly, and
+            monthly routine. The printable cleaning log PDF gives staff a simple completion record,
+            while the individual templates below cover specific shifts and areas.
+          </p>
+        </div>
+        <div className="hero-actions">
+          <Link className="hero-cta" href="/templates/restaurant-cleaning-checklist/">
+            Open the Master Checklist
+          </Link>
+          <a className="outline-cta" href="/downloads/cleaning-log.pdf" download>
+            Download Cleaning Log PDF
+          </a>
         </div>
       </section>
 
