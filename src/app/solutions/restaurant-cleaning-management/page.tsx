@@ -5,7 +5,7 @@ import SiteHeader from "@/components/site-header";
 export const metadata: Metadata = {
   title: "Restaurant Cleaning Management Software",
   description:
-    "Restaurant cleaning management software for digital checklists, recurring schedules, task assignments, and real-time completion tracking.",
+    "Restaurant cleaning management software for digital checklists, recurring schedules, task assignments, cleaning metrics by space, and global completion tracking.",
   alternates: { canonical: "/solutions/restaurant-cleaning-management/" },
 };
 
@@ -17,6 +17,8 @@ const managerControls = [
   "Closing checklists",
   "Weekly and monthly deep cleaning",
   "Manager verification",
+  "Cleaning metrics by space",
+  "Global cleaning performance",
 ];
 
 const features = [
@@ -34,6 +36,16 @@ const features = [
     title: "Real-time task status",
     description:
       "See which tasks are pending, completed, or still waiting for action during the shift. This gives managers live visibility instead of discovering missed work after service.",
+  },
+  {
+    title: "Cleaning metrics by space",
+    description:
+      "Review cleaning performance for individual spaces such as kitchens, restrooms, dining rooms, bars, storage, and other operational areas.",
+  },
+  {
+    title: "Global cleaning dashboard",
+    description:
+      "Combine cleaning activity across spaces into one global view so managers can understand overall completion and identify where follow-up is needed.",
   },
   {
     title: "Overdue task visibility",
@@ -74,15 +86,17 @@ const workflowSteps = [
       "Each team member sees what needs to be done and marks tasks as completed during the shift.",
   },
   {
-    title: "Managers track completion in real time",
+    title: "Managers track completion and metrics",
     description:
-      "See pending, completed, and overdue tasks without checking paper sheets manually.",
+      "See pending, completed, and overdue tasks, then review performance by space and globally without consolidating paper sheets.",
   },
 ];
 
 const comparisonRows = [
   ["Assign tasks", "Manual", "Manual", "By role, area, and shift"],
   ["Track completion", "After checking sheets", "Manual updates", "In real time"],
+  ["Metrics by space", "Manual counting", "Manual formulas", "Built from digital cleaning activity"],
+  ["Global performance", "No consolidated view", "Manual consolidation", "Global cleaning dashboard"],
   ["Remind staff", "Manual follow-up", "Not built in", "Scheduled reminders"],
   ["Audit history", "Paper folders", "File history", "Digital records"],
   ["Update routines", "Reprint sheets", "Edit files", "Edit templates digitally"],
@@ -93,6 +107,8 @@ const whoThisIsFor = [
   "Standardize routines across shifts",
   "Track closing duties",
   "Verify restroom checks",
+  "Measure cleaning performance by space",
+  "See global cleaning performance",
   "Keep cleaning records organized",
   "Prepare for internal reviews and inspections",
 ];
@@ -137,17 +153,17 @@ export default function Page() {
         <h1>Restaurant Cleaning Management Software</h1>
         <p className="article-lead">
           Replace paper cleaning sheets with digital checklists, recurring schedules, task
-          assignments, and real-time completion tracking for your restaurant team.
+          assignments, real-time completion tracking, and cleaning metrics by space and globally.
         </p>
         <div className="hero-actions article-actions">
           <Link className="hero-cta" href="/contact/">
             Request a Demo
           </Link>
+          <Link className="outline-cta" href="/solutions/food-and-beverage-cleaning-dashboard/">
+            See Cleaning Dashboard
+          </Link>
           <Link className="outline-cta" href="/templates/">
             Browse Templates
-          </Link>
-          <Link className="outline-cta" href="/blog/restaurant-cleaning-checklist-app/">
-            See Checklist App Guide
           </Link>
         </div>
 
@@ -156,7 +172,8 @@ export default function Page() {
           <p>
             Paper cleaning logs are easy to ignore, lose, or complete after the fact. Managers
             often have to chase staff, check clipboards manually, and guess whether cleaning
-            routines were completed on time.
+            routines were completed on time. They also make it difficult to compare performance
+            between spaces or understand global cleaning execution.
           </p>
         </section>
 
@@ -181,6 +198,18 @@ export default function Page() {
               </div>
             ))}
           </div>
+        </section>
+
+        <section>
+          <h2>Cleaning metrics and dashboard</h2>
+          <p>
+            Because cleaning sheets are digital, CleanScan can turn execution into measurable data.
+            Managers can review performance for individual spaces and also see a global view across
+            the operation.
+          </p>
+          <p>
+            See the dedicated <Link href="/solutions/food-and-beverage-cleaning-dashboard/">food and beverage cleaning dashboard</Link> page for the metrics use case.
+          </p>
         </section>
 
         <section>
@@ -253,14 +282,14 @@ export default function Page() {
           <h2>Ready to replace paper cleaning sheets?</h2>
           <p>
             See how CleanScan can help your restaurant standardize cleaning tasks, track execution,
-            and keep a clear digital record across shifts.
+            and turn cleaning activity into metrics by space and a global operational view.
           </p>
           <div className="hero-actions">
             <Link className="hero-cta" href="/contact/">
               Request a Demo
             </Link>
-            <Link className="outline-cta" href="/templates/restaurant-cleaning-schedule-template/">
-              View Cleaning Schedule Template
+            <Link className="outline-cta" href="/solutions/food-and-beverage-cleaning-dashboard/">
+              View Cleaning Dashboard
             </Link>
           </div>
         </section>
