@@ -1,0 +1,14 @@
+image: node:20
+
+pipelines:
+  branches:
+    main:
+      - step:
+          name: Build and deploy to Sered by FTP
+          caches:
+            - node
+          script:
+            - npm ci
+            - npm run build
+            - apt-get update && apt-get install -y lftp
+            - lftp -e "set ftp:ssl-allow yes; set ssl:verify-certificate no; set ftp:passive-mode yes; mirror -R --delete out/ /; bye" -u "cleanscan@cleanscan.site,NEhadMMz84poC2xKqq6z" "ftp://193.84.177.61:21"
