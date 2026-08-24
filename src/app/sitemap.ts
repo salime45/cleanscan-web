@@ -12,6 +12,7 @@ const routes = [
   "/solutions/health-inspection-readiness/",
   "/templates/",
   "/templates/restaurant-cleaning-checklist/",
+  "/templates/restaurant-cleaning-schedule-template/",
   "/templates/restaurant-opening-checklist/",
   "/templates/restaurant-closing-cleaning-checklist/",
   "/templates/restroom-cleaning-log/",
