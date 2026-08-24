@@ -35,9 +35,8 @@ jobs:
 
       - name: Deploy to Sered by FTP
         env:
-          FTP_HOST: ${{ secrets.FTP_HOST }}
-          FTP_PORT: ${{ secrets.FTP_PORT }}
-          FTP_USER: ${{ secrets.FTP_USER }}
-          FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
+          FTP_HOST: ftp://193.84.177.61
+          FTP_USER: cleanscan@cleanscan.site
+          FTP_PASSWORD: NEhadMMz84poC2xKqq6z
         run: |
-          lftp -e "set ftp:ssl-allow yes; set ssl:verify-certificate no; set ftp:passive-mode yes; mirror -R --delete out/ /; bye" -u "$FTP_USER,$FTP_PASSWORD" "ftp://$FTP_HOST:${FTP_PORT:-21}"
+          lftp -e "set ftp:ssl-allow yes; set ssl:verify-certificate no; set ftp:passive-mode yes; mirror -R --delete out/ /; bye" -u "$FTP_USER,$FTP_PASSWORD" "ftp://$FTP_HOST:21"
