@@ -8,6 +8,7 @@ const routes = [
   "/contact/",
   "/solutions/",
   "/solutions/restaurant-cleaning-management/",
+  "/solutions/food-and-beverage-cleaning-dashboard/",
   "/solutions/restroom-quality-control/",
   "/solutions/health-inspection-readiness/",
   "/templates/",
