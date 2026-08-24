@@ -56,6 +56,7 @@ const monthlyTasks = [
 ];
 
 const relatedTemplates = [
+  { title: "Restaurant Cleaning Schedule Template", href: "/templates/restaurant-cleaning-schedule-template/" },
   { title: "Restroom Cleaning Log Template", href: "/templates/restroom-cleaning-log/" },
   { title: "Kitchen Cleaning Checklist", href: "/templates/kitchen-cleaning-checklist/" },
   { title: "Restaurant Opening Checklist", href: "/templates/restaurant-opening-checklist/" },
@@ -110,6 +111,9 @@ export default function Page() {
           <a className="outline-cta" href="#restaurant-cleaning-checklist-template">
             View Printable Checklist
           </a>
+          <Link className="outline-cta" href="/templates/restaurant-cleaning-schedule-template/">
+            Build a Cleaning Schedule
+          </Link>
           <Link className="outline-cta" href="/solutions/restaurant-cleaning-management/">
             Use This Checklist Digitally
           </Link>
@@ -177,7 +181,8 @@ export default function Page() {
           <h2>Monthly restaurant cleaning checklist</h2>
           <p>
             Monthly reviews help managers improve the cleaning schedule, identify repeated misses,
-            and keep records ready for internal reviews or inspections.
+            and keep records ready for internal reviews or inspections. If you need to turn these
+            frequencies into a shift-by-shift plan, use the <Link href="/templates/restaurant-cleaning-schedule-template/">restaurant cleaning schedule template</Link>.
           </p>
           <ul>
             {monthlyTasks.map((task) => <li key={task}>{task}</li>)}
@@ -202,9 +207,14 @@ export default function Page() {
             timestamps, completion tracking, and manager visibility. Staff follow the routine and
             managers can see what is done or overdue without checking paper logs.
           </p>
-          <Link className="hero-cta" href="/solutions/restaurant-cleaning-management/">
-            See Restaurant Cleaning Management
-          </Link>
+          <div className="hero-actions">
+            <Link className="hero-cta" href="/solutions/restaurant-cleaning-management/">
+              See Restaurant Cleaning Management
+            </Link>
+            <Link className="outline-cta" href="/blog/restaurant-cleaning-checklist-app/">
+              Compare Paper vs App
+            </Link>
+          </div>
         </section>
 
         <section>
