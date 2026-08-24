@@ -4,10 +4,10 @@ import SiteHeader from "@/components/site-header";
 
 const canonical = "/templates/kitchen-cleaning-checklist/";
 const description =
-  "Download or use a restaurant kitchen cleaning checklist template to track daily, weekly, and shift-based cleaning tasks across prep areas, cooklines, sinks, floors, and storage.";
+  "Free printable kitchen cleaning checklist template for restaurants with daily, weekly, and shift-based tasks. Download the cleaning log PDF or run it digitally in CleanScan.";
 
 export const metadata: Metadata = {
-  title: "Kitchen Cleaning Checklist Template for Restaurants",
+  title: "Free Kitchen Cleaning Checklist Template for Restaurants",
   description,
   alternates: { canonical },
 };
@@ -87,6 +87,11 @@ const monthlyTasks = [
 
 const faqItems = [
   {
+    question: "Is this kitchen cleaning checklist template free?",
+    answer:
+      "Yes. You can use the checklist on this page for free and download the cleaning log PDF without creating an account.",
+  },
+  {
     question: "What is a kitchen cleaning checklist?",
     answer:
       "A kitchen cleaning checklist is a structured task list for prep areas, cooklines, sinks, storage, floors, drains, equipment, and manager verification.",
@@ -104,7 +109,7 @@ const faqItems = [
   {
     question: "Should kitchen cleaning logs be paper or digital?",
     answer:
-      "Paper logs are useful for simple records, but digital kitchen cleaning logs make recurring schedules, assignments, completion history, and manager review easier to control.",
+      "Paper logs are useful for simple records, but digital kitchen cleaning logs make recurring schedules, assignments, completion history, metrics, and manager review easier to control.",
   },
 ];
 
@@ -114,28 +119,17 @@ const faq = {
   mainEntity: faqItems.map((item) => ({
     "@type": "Question",
     name: item.question,
-    acceptedAnswer: {
-      "@type": "Answer",
-      text: item.answer,
-    },
+    acceptedAnswer: { "@type": "Answer", text: item.answer },
   })),
 };
 
-function TaskSection({
-  sections,
-}: {
-  sections: { title: string; tasks: string[] }[];
-}) {
+function TaskSection({ sections }: { sections: { title: string; tasks: string[] }[] }) {
   return (
     <div className="checklist-groups">
       {sections.map((section) => (
         <section className="checklist-group" key={section.title}>
           <h3>{section.title}</h3>
-          <ul>
-            {section.tasks.map((task) => (
-              <li key={task}>{task}</li>
-            ))}
-          </ul>
+          <ul>{section.tasks.map((task) => <li key={task}>{task}</li>)}</ul>
         </section>
       ))}
     </div>
@@ -148,65 +142,33 @@ export default function Page() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faq).replace(/</g, "\\u003c") }} />
       <SiteHeader />
       <article className="article-wrap">
-        <p className="article-kicker">Template</p>
+        <p className="article-kicker">Free Printable Template</p>
         <h1>Kitchen Cleaning Checklist Template for Restaurants</h1>
         <p className="article-lead">
-          Use this restaurant kitchen cleaning checklist template to organize daily, weekly, monthly,
-          and shift-based cleaning tasks across prep areas, cooklines, sinks, floors, drains,
-          equipment, storage, and manager verification.
+          Use this free restaurant kitchen cleaning checklist template to organize daily, weekly,
+          monthly, and shift-based cleaning tasks across prep areas, cooklines, sinks, floors,
+          drains, equipment, and storage.
         </p>
         <div className="hero-actions article-actions">
-          <a className="hero-cta" href="/downloads/cleaning-log.pdf" download>
-            Download Kitchen Cleaning Log
-          </a>
-          <Link className="outline-cta" href="/solutions/restaurant-cleaning-management/">
-            Use in CleanScan
-          </Link>
-          <a className="outline-cta" href="#kitchen-cleaning-checklist-preview">
-            View Checklist Preview
-          </a>
+          <a className="hero-cta" href="/downloads/cleaning-log.pdf" download>Download Free Cleaning Log PDF</a>
+          <Link className="outline-cta" href="/solutions/restaurant-cleaning-management/">Use It Digitally</Link>
+          <a className="outline-cta" href="#kitchen-cleaning-checklist-preview">View Checklist Template</a>
         </div>
-
-        <section>
-          <h2>What is a kitchen cleaning checklist?</h2>
-          <p>
-            A kitchen cleaning checklist is a repeatable task list that tells back-of-house staff
-            what needs to be cleaned, how often it should happen, who owns the work, and how a
-            manager or shift lead should verify completion.
-          </p>
-          <p>
-            Restaurants use kitchen checklists to reduce missed station work, keep cleaning records
-            consistent, and prepare stronger <a href="/blog/health-inspection-compliance/what-health-inspectors-look-for-in-cleaning-logs/">cleaning logs for health inspection review</a>.
-          </p>
-        </section>
+        <p>Free to use. No signup required for the PDF.</p>
 
         <section id="kitchen-cleaning-checklist-preview">
-          <h2>What should be included in a restaurant kitchen cleaning checklist?</h2>
+          <h2>Free kitchen checklist template</h2>
           <p>
             A useful kitchen checklist should include area, task, frequency, responsible role, and
-            verification. The table below is a starting structure that can be adapted to your layout,
-            staff roles, equipment, and local requirements.
+            verification. Use the table below as a printable starting point and adapt it to your
+            stations, equipment, staff roles, and local requirements.
           </p>
           <div className="template-table-wrap">
             <table className="template-table">
-              <thead>
-                <tr>
-                  <th>Area/station</th>
-                  <th>Task</th>
-                  <th>Frequency</th>
-                  <th>Responsible role</th>
-                  <th>Verification</th>
-                </tr>
-              </thead>
+              <thead><tr><th>Area/station</th><th>Task</th><th>Frequency</th><th>Responsible role</th><th>Verification</th></tr></thead>
               <tbody>
                 {previewRows.map(([area, task, frequency, role, verification]) => (
-                  <tr key={`${area}-${task}`}>
-                    <td>{area}</td>
-                    <td>{task}</td>
-                    <td>{frequency}</td>
-                    <td>{role}</td>
-                    <td>{verification}</td>
-                  </tr>
+                  <tr key={`${area}-${task}`}><td>{area}</td><td>{task}</td><td>{frequency}</td><td>{role}</td><td>{verification}</td></tr>
                 ))}
               </tbody>
             </table>
@@ -214,86 +176,50 @@ export default function Page() {
         </section>
 
         <section>
-          <h2>Daily kitchen cleaning tasks</h2>
+          <h2>Daily kitchen cleaning checklist</h2>
           <p>
-            Daily kitchen cleaning tasks should focus on the areas that affect service readiness and
-            shift handoff: prep surfaces, cookline touchpoints, floors, sinks, dish stations, and
-            visible debris. For a deeper shift-by-shift structure, use the <a href="/blog/daily-restaurant-kitchen-cleaning-checklist/">daily restaurant kitchen cleaning checklist</a>.
+            Daily kitchen cleaning tasks should focus on service readiness and shift handoff. For a
+            deeper shift-by-shift structure, use the <Link href="/blog/daily-restaurant-kitchen-cleaning-checklist/">daily restaurant kitchen cleaning checklist</Link>.
           </p>
           <TaskSection sections={dailyTasks} />
         </section>
 
-        <section>
-          <h2>Weekly kitchen cleaning tasks</h2>
-          <p>
-            Weekly work should catch buildup and organization issues that daily tasks may not fully
-            cover. These tasks are useful for storage areas, equipment exteriors, floor edges, and
-            repeated problem spots.
-          </p>
-          <TaskSection sections={weeklyTasks} />
-        </section>
-
-        <section>
-          <h2>Monthly kitchen cleaning tasks</h2>
-          <p>
-            Monthly reviews help managers improve the checklist itself. Use them to update
-            responsibilities, review missed work, and align kitchen records with inspection
-            readiness and internal SOPs.
-          </p>
-          <TaskSection sections={monthlyTasks} />
-        </section>
+        <section><h2>Weekly kitchen cleaning checklist</h2><TaskSection sections={weeklyTasks} /></section>
+        <section><h2>Monthly kitchen cleaning checklist</h2><TaskSection sections={monthlyTasks} /></section>
 
         <section>
           <h2>Kitchen line check template</h2>
           <p>
-            A kitchen line check template is a short shift checklist for cookline readiness before,
-            during, and after service. It should help staff review the cookline, prep surfaces,
-            equipment handles, visible spills, sanitizer setup, trash, floors, and station readiness
-            while the shift is still active.
-          </p>
-          <p>
-            Keep the line check focused on action. The goal is not to duplicate the full kitchen
-            checklist. It is to confirm the line is clean, reset, stocked, and safe enough for the
-            next service block. See the full <a href="/blog/kitchen-line-check-template/">kitchen line check template guide</a> for a manager-ready structure.
+            A kitchen line check is a short shift checklist for cookline readiness before and during
+            service. See the full <Link href="/blog/kitchen-line-check-template/">kitchen line check template guide</Link>.
           </p>
         </section>
 
         <section>
-          <h2>Printable checklist vs digital kitchen cleaning log</h2>
+          <h2>Printable kitchen checklist vs digital cleaning log</h2>
           <p>
-            A printable kitchen cleaning checklist is useful when the team needs a simple paper
-            record with date, time, area, completed-by name, signature, notes, and verification.
-            Paper works best when the routine is small and managers review sheets consistently.
+            A printable kitchen checklist is useful for a simple paper record. A digital log is more
+            useful when managers need recurring schedules, assignees, timestamps, overdue visibility,
+            completion history, and cleaning metrics by space.
           </p>
           <p>
-            A digital kitchen cleaning log is stronger when managers need recurring schedules,
-            role-based assignments, timestamps, overdue visibility, issue notes, and easier review
-            across shifts. If your team is still building the full routine, pair this kitchen
-            checklist with the <a href="/templates/restaurant-cleaning-checklist/">restaurant cleaning checklist template</a> and the <a href="/blog/opening-checklist-for-restaurant-managers/">opening checklist for restaurant managers</a>.
+            Pair this template with the <Link href="/templates/restaurant-cleaning-checklist/">restaurant cleaning checklist</Link>, the <Link href="/templates/restaurant-cleaning-schedule-template/">restaurant cleaning schedule template</Link>, and the <Link href="/solutions/food-and-beverage-cleaning-dashboard/">cleaning dashboard</Link>.
           </p>
         </section>
 
         <section className="article-cta-box commercial-final-cta">
-          <h2>Use CleanScan to manage kitchen cleaning tasks digitally</h2>
+          <h2>Run your kitchen checklist digitally</h2>
           <p>
-            CleanScan turns kitchen cleaning templates into recurring digital tasks with assignees,
-            shift schedules, completion tracking, overdue visibility, and manager review. Managers
-            can control kitchen cleaning without chasing paper sheets after service.
+            CleanScan digitizes the cleaning sheet into recurring tasks and gives managers completion
+            tracking plus metrics by space and across the whole operation.
           </p>
-          <Link className="hero-cta" href="/contact/">
-            Run Kitchen Checklist
-          </Link>
+          <Link className="hero-cta" href="/solutions/restaurant-cleaning-management/">See CleanScan for Restaurants</Link>
         </section>
 
         <section>
           <h2>Frequently asked questions</h2>
           <div className="faq-list">
-            {faqItems.map((faqItem) => (
-              <details key={faqItem.question}>
-                <summary>{faqItem.question}</summary>
-                <p>{faqItem.answer}</p>
-              </details>
-            ))}
+            {faqItems.map((faqItem) => <details key={faqItem.question}><summary>{faqItem.question}</summary><p>{faqItem.answer}</p></details>)}
           </div>
         </section>
       </article>
