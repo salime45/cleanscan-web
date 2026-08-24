@@ -5,7 +5,7 @@ import SiteHeader from "@/components/site-header";
 export const metadata: Metadata = {
   title: "Free Restaurant Cleaning Checklist Templates (PDF & Printable)",
   description:
-    "Free printable restaurant cleaning checklist templates with a downloadable PDF cleaning log for kitchens, restrooms, opening, closing, and inspection readiness.",
+    "Free printable restaurant cleaning checklist templates with a downloadable PDF cleaning log for schedules, kitchens, restrooms, opening, closing, and inspection readiness.",
   alternates: { canonical: "/templates/" },
 };
 
@@ -19,6 +19,16 @@ const templates = [
     frequency: "Daily / weekly / monthly",
     includes:
       "daily, weekly, and monthly tasks for FOH, BOH, restrooms, kitchen, and shared spaces.",
+  },
+  {
+    title: "Restaurant Cleaning Schedule Template",
+    tableTitle: "Restaurant Cleaning Schedule",
+    href: "/templates/restaurant-cleaning-schedule-template/",
+    bestFor: "managers who need to organize cleaning by opening, service, closing, daily, weekly, and monthly frequencies.",
+    tableBestFor: "Task timing and ownership",
+    frequency: "Opening / shift / daily / weekly / monthly",
+    includes:
+      "cleaning tasks, areas, frequencies, responsible roles, and recurring manager review.",
   },
   {
     title: "Restroom Cleaning Log Template for Restaurants",
@@ -84,9 +94,14 @@ const faqs = [
       "A restaurant cleaning checklist template is a reusable task list that defines what needs to be cleaned, when it should happen, and which areas or roles are responsible.",
   },
   {
+    question: "What is the difference between a cleaning checklist and a cleaning schedule?",
+    answer:
+      "A checklist defines the cleaning tasks. A cleaning schedule adds timing, frequency, and ownership so the team knows when each task should happen and who is responsible.",
+  },
+  {
     question: "Which restaurant cleaning template should I start with?",
     answer:
-      "Most teams should start with the restaurant cleaning checklist template because it covers daily, weekly, and monthly routines across the whole restaurant.",
+      "Most teams should start with the restaurant cleaning checklist template because it covers daily, weekly, and monthly routines across the whole restaurant, then use the cleaning schedule template to organize timing and ownership.",
   },
   {
     question: "Can I download a printable cleaning log PDF?",
@@ -141,9 +156,9 @@ export default function TemplatesIndexPage() {
         <p className="article-kicker">Free Templates</p>
         <h1>Free Restaurant Cleaning Checklist Templates</h1>
         <p className="article-lead">
-          Printable restaurant cleaning checklists for daily, weekly, and monthly routines. Download
-          the free PDF cleaning log or choose a template for kitchens, restrooms, opening, closing,
-          and health inspection readiness.
+          Printable restaurant cleaning checklists and schedules for daily, weekly, and monthly
+          routines. Download the free PDF cleaning log or choose a template for kitchens, restrooms,
+          opening, closing, schedules, and health inspection readiness.
         </p>
         <div className="hero-actions">
           <a className="hero-cta" href="/downloads/cleaning-log.pdf" download>
@@ -151,6 +166,9 @@ export default function TemplatesIndexPage() {
           </a>
           <Link className="outline-cta" href="/templates/restaurant-cleaning-checklist/">
             View Restaurant Cleaning Checklist
+          </Link>
+          <Link className="outline-cta" href="/templates/restaurant-cleaning-schedule-template/">
+            View Cleaning Schedule
           </Link>
           <Link className="outline-cta" href="/solutions/restaurant-cleaning-management/">
             Use Checklists Digitally
@@ -168,13 +186,17 @@ export default function TemplatesIndexPage() {
           <h2>Restaurant cleaning checklist PDF and printable templates</h2>
           <p>
             Start with the master restaurant cleaning checklist for a complete daily, weekly, and
-            monthly routine. The printable cleaning log PDF gives staff a simple completion record,
-            while the individual templates below cover specific shifts and areas.
+            monthly routine. Then use the restaurant cleaning schedule template to organize when each
+            task happens and who owns it. The printable cleaning log PDF gives staff a simple
+            completion record.
           </p>
         </div>
         <div className="hero-actions">
           <Link className="hero-cta" href="/templates/restaurant-cleaning-checklist/">
             Open the Master Checklist
+          </Link>
+          <Link className="outline-cta" href="/templates/restaurant-cleaning-schedule-template/">
+            Open Cleaning Schedule
           </Link>
           <a className="outline-cta" href="/downloads/cleaning-log.pdf" download>
             Download Cleaning Log PDF
@@ -288,6 +310,9 @@ export default function TemplatesIndexPage() {
           <div className="hero-actions cta-actions">
             <Link className="hero-cta" href="/solutions/restaurant-cleaning-management/">
               Use Templates in CleanScan
+            </Link>
+            <Link className="outline-cta" href="/blog/restaurant-cleaning-checklist-app/">
+              See the Checklist App Guide
             </Link>
             <Link className="outline-cta" href="/contact/">
               Request a Demo
