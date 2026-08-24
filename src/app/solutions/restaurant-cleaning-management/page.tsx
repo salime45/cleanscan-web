@@ -103,6 +103,10 @@ const templates = [
     href: "/templates/restaurant-cleaning-checklist/",
   },
   {
+    title: "Restaurant Cleaning Schedule Template",
+    href: "/templates/restaurant-cleaning-schedule-template/",
+  },
+  {
     title: "Restroom Cleaning Log Template",
     href: "/templates/restroom-cleaning-log/",
   },
@@ -141,6 +145,9 @@ export default function Page() {
           </Link>
           <Link className="outline-cta" href="/templates/">
             Browse Templates
+          </Link>
+          <Link className="outline-cta" href="/blog/restaurant-cleaning-checklist-app/">
+            See Checklist App Guide
           </Link>
         </div>
 
@@ -230,7 +237,8 @@ export default function Page() {
           <h2>Templates included</h2>
           <p>
             Start from proven restaurant cleaning routines, then adapt each template to your team,
-            areas, and shift structure.
+            areas, and shift structure. Use the master checklist to define the work and the cleaning
+            schedule template to define timing and ownership.
           </p>
           <div className="commercial-template-list">
             {templates.map((template) => (
@@ -247,9 +255,14 @@ export default function Page() {
             See how CleanScan can help your restaurant standardize cleaning tasks, track execution,
             and keep a clear digital record across shifts.
           </p>
-          <Link className="hero-cta" href="/contact/">
-            Request a Demo
-          </Link>
+          <div className="hero-actions">
+            <Link className="hero-cta" href="/contact/">
+              Request a Demo
+            </Link>
+            <Link className="outline-cta" href="/templates/restaurant-cleaning-schedule-template/">
+              View Cleaning Schedule Template
+            </Link>
+          </div>
         </section>
       </article>
     </main>
