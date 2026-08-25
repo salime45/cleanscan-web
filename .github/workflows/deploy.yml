@@ -52,7 +52,6 @@ jobs:
           pwd
           cls
 
-          mirror -R --delete --only-newer --parallel=8 out/ /
-
+          mirror -R --delete --parallel=8 out/ /
           bye
           EOF
