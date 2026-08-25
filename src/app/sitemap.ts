@@ -6,6 +6,7 @@ export const dynamic = "force-static";
 const routes = [
   "/",
   "/contact/",
+  "/pricing/",
   "/solutions/",
   "/solutions/restaurant-cleaning-management/",
   "/solutions/food-and-beverage-cleaning-dashboard/",
@@ -44,6 +45,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
   return routes.map((route) => ({
     url: `${SITE_URL}${route}`,
     changeFrequency: route.startsWith("/blog") ? "monthly" : "weekly",
-    priority: route === "/" ? 1 : route.startsWith("/solutions") || route.startsWith("/templates") ? 0.9 : 0.7,
+    priority: route === "/" ? 1 : route.startsWith("/solutions") || route.startsWith("/templates") || route === "/pricing/" ? 0.9 : 0.7,
   }));
 }
