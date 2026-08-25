@@ -39,4 +39,13 @@ jobs:
           FTP_USER: cleanscan@cleanscan.site
           FTP_PASSWORD: NEhadMMz84poC2xKqq6z
         run: |
-          lftp -e "set ftp:ssl-allow yes; set ssl:verify-certificate no; set ftp:passive-mode yes; set net:max-retries 2; mirror -R --verbose dist/ /; bye" -u "$FTP_USER,$FTP_PASSWORD" "ftp://$FTP_HOST:21"
+          lftp -e "
+          set ftp:ssl-allow yes;
+          set ssl:verify-certificate no;
+          set ftp:passive-mode yes;
+          set net:max-retries 2;
+          set net:timeout 20;
+          set mirror:parallel-transfer-count 8;
+          mirror -R --delete --only-newer --parallel=8 out/ /;
+          bye
+          " -u "$FTP_USER,$FTP_PASSWORD" "ftp://$FTP_HOST:${FTP_PORT:-21}"
