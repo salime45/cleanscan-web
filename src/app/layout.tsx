@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import "./design-refresh.css";
 import CookieBanner from "@/components/cookie-banner";
 import { DEFAULT_OG_IMAGE, DEFAULT_OG_IMAGE_ALT, SITE_URL } from "@/lib/site";
 import { GoogleAnalytics } from '@next/third-parties/google'
