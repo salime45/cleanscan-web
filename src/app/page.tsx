@@ -6,7 +6,7 @@ import { DEFAULT_OG_IMAGE } from "@/lib/site";
 
 const title = "Restaurant Cleaning Checklist App for Restaurants | CleanScan";
 const description =
-  "CleanScan helps restaurants replace paper cleaning logs with digital checklists, recurring tasks, real-time tracking, and cleaning records across shifts.";
+  "CleanScan helps restaurants replace paper cleaning logs with digital checklists, scheduled cleaning, public QR status pages, real-time tracking, and cleaning metrics.";
 
 export const metadata: Metadata = {
   title: { absolute: title },
@@ -76,9 +76,9 @@ const testimonials = [
 
 const steps = [
   ["01", "Create the routine", "Start from a template or build the cleaning checklist that matches each space."],
-  ["02", "Assign and schedule", "Set recurring work by area, role, shift, day, or frequency."],
-  ["03", "Execute from mobile", "Staff see their tasks and record completion during the shift."],
-  ["04", "Measure what happens", "Managers see completion, overdue work, and metrics by space and globally."],
+  ["02", "Assign and schedule", "Set how often each space should be cleaned by role, shift, day, or frequency."],
+  ["03", "Execute from mobile", "Staff see what needs cleaning and record completion during the shift."],
+  ["04", "Measure and prove it", "Managers see metrics while each space can show its latest cleaning through a public QR page."],
 ];
 
 export default function Home() {
@@ -137,6 +137,29 @@ export default function Home() {
         .home-refresh .hr-feature-mark { width:32px; height:32px; border-radius:9px; display:flex; align-items:center; justify-content:center; background:#e8faf7; color:#108e84; font-weight:900; }
         .home-refresh .hr-feature strong { color:var(--hr-ink); }
         .home-refresh .hr-feature p { margin:4px 0 0; color:var(--hr-muted); line-height:1.55; }
+        .home-refresh .hr-qr-section { background:#0b2138; color:#fff; }
+        .home-refresh .hr-qr-grid { display:grid; grid-template-columns:1fr .9fr; gap:72px; align-items:center; }
+        .home-refresh .hr-qr-copy .hr-eyebrow { color:#79e5dc; }
+        .home-refresh .hr-qr-copy h2 { color:#fff; }
+        .home-refresh .hr-qr-copy>p:last-of-type { max-width:650px; color:#c7d8e7; font-size:1.05rem; line-height:1.72; }
+        .home-refresh .hr-qr-points { display:grid; gap:12px; margin-top:28px; }
+        .home-refresh .hr-qr-point { display:grid; grid-template-columns:32px 1fr; gap:12px; align-items:start; color:#dbe8f2; }
+        .home-refresh .hr-qr-point span { width:28px; height:28px; border-radius:8px; display:flex; align-items:center; justify-content:center; background:rgba(39,200,185,.16); color:#62ded4; font-weight:900; }
+        .home-refresh .hr-public-card { max-width:430px; margin-left:auto; padding:18px; border-radius:26px; background:#eaf1f5; box-shadow:0 32px 80px rgba(0,0,0,.28); transform:rotate(1.5deg); }
+        .home-refresh .hr-public-sheet { padding:30px; border-radius:18px; background:#fff; color:var(--hr-ink); }
+        .home-refresh .hr-public-top { display:flex; justify-content:space-between; align-items:center; gap:16px; }
+        .home-refresh .hr-public-brand { font-weight:900; letter-spacing:-.02em; }
+        .home-refresh .hr-live-pill { padding:7px 10px; border-radius:999px; background:#e8faf7; color:#108e84; font-size:.73rem; font-weight:900; text-transform:uppercase; letter-spacing:.06em; }
+        .home-refresh .hr-public-sheet h3 { margin:34px 0 8px; font-size:1.45rem; }
+        .home-refresh .hr-public-label { margin:0; color:var(--hr-muted); font-size:.85rem; }
+        .home-refresh .hr-public-time { margin:5px 0 0; font-size:1.9rem; font-weight:900; }
+        .home-refresh .hr-public-meta { margin:6px 0 28px; color:var(--hr-muted); }
+        .home-refresh .hr-qr-row { display:grid; grid-template-columns:104px 1fr; gap:18px; align-items:center; padding-top:24px; border-top:1px solid #e2e9ee; }
+        .home-refresh .hr-qr-box { width:104px; height:104px; padding:10px; display:grid; grid-template-columns:repeat(4,1fr); gap:4px; border:1px solid #d8e2e8; border-radius:10px; background:#fff; }
+        .home-refresh .hr-qr-box i { display:block; background:#102235; border-radius:2px; }
+        .home-refresh .hr-qr-box i:nth-child(2),.home-refresh .hr-qr-box i:nth-child(5),.home-refresh .hr-qr-box i:nth-child(8),.home-refresh .hr-qr-box i:nth-child(11),.home-refresh .hr-qr-box i:nth-child(14) { background:transparent; }
+        .home-refresh .hr-qr-note strong { display:block; margin-bottom:5px; }
+        .home-refresh .hr-qr-note p { margin:0; color:var(--hr-muted); font-size:.9rem; line-height:1.5; }
         .home-refresh .hr-ops-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:16px; }
         .home-refresh .hr-op-card { position:relative; min-height:230px; padding:28px; overflow:hidden; border:1px solid #dee7ed; border-radius:18px; background:#fff; transition:transform .16s ease,border-color .16s ease,box-shadow .16s ease; }
         .home-refresh .hr-op-card:hover { transform:translateY(-3px); border-color:#b9d8d4; box-shadow:0 18px 44px rgba(16,51,76,.09); }
@@ -159,7 +182,7 @@ export default function Home() {
         .home-refresh .hr-legal { margin-top:26px; color:#73899d; font-size:.86rem; }
         .home-refresh .hr-legal a { text-decoration:underline; }
         @media (max-width:900px) {
-          .home-refresh .hr-hero-grid,.home-refresh .hr-split { grid-template-columns:1fr; }
+          .home-refresh .hr-hero-grid,.home-refresh .hr-split,.home-refresh .hr-qr-grid { grid-template-columns:1fr; }
           .home-refresh .hr-hero-grid { padding:64px 0 80px; }
           .home-refresh .hr-product-frame { max-width:650px; transform:none; }
           .home-refresh .hr-float-card { right:14px; }
@@ -167,6 +190,7 @@ export default function Home() {
           .home-refresh .hr-proof-intro { grid-column:1/-1; padding:10px 18px 22px; }
           .home-refresh .hr-stat { border-left:0; padding:14px 18px; }
           .home-refresh .hr-process { grid-template-columns:repeat(2,1fr); }
+          .home-refresh .hr-public-card { margin:0; }
         }
         @media (max-width:620px) {
           .home-refresh .hr-hero h1 { font-size:2.75rem; }
@@ -176,6 +200,8 @@ export default function Home() {
           .home-refresh .hr-section { padding:68px 0; }
           .home-refresh .hr-final-box { padding:34px 25px; }
           .home-refresh .hr-step,.home-refresh .hr-op-card { min-height:auto; }
+          .home-refresh .hr-public-sheet { padding:22px; }
+          .home-refresh .hr-qr-row { grid-template-columns:1fr; }
         }
       `}</style>
 
@@ -188,16 +214,17 @@ export default function Home() {
             <h1>Turn every cleaning sheet into a system you can actually control.</h1>
             <p>
               CleanScan helps restaurant managers replace paper cleaning sheets with digital checklists,
-              recurring tasks, shift accountability, real-time completion records, and cleaning metrics.
+              scheduled cleaning, shift accountability, real-time records, metrics, and a public QR status for every space.
             </p>
             <div className="hr-actions">
               <Link className="hr-primary" href="/contact/">Request a Demo</Link>
+              <Link className="hr-secondary" href="/pricing/">See Pricing</Link>
               <Link className="hr-secondary" href="/templates/">Browse Free Templates</Link>
             </div>
             <div className="hr-trust">
-              <span>No paper chasing</span>
+              <span>Scheduled cleaning</span>
               <span>Metrics by space</span>
-              <span>Global visibility</span>
+              <span>Public QR status</span>
             </div>
           </div>
 
@@ -221,11 +248,11 @@ export default function Home() {
       <section className="hr-proof-strip">
         <div className="hr-wrap hr-proof-grid">
           <div className="hr-proof-intro">
-            One operational view instead of paper sheets, WhatsApp reminders, and end-of-shift guesswork.
+            One operational view instead of paper sheets, manual reminders, and end-of-shift guesswork.
           </div>
           <div className="hr-stat"><strong>By space</strong><span>See how each area performs</span></div>
-          <div className="hr-stat"><strong>In real time</strong><span>Know what is done or overdue</span></div>
-          <div className="hr-stat"><strong>Globally</strong><span>Measure the full cleaning operation</span></div>
+          <div className="hr-stat"><strong>On schedule</strong><span>Staff know when cleaning is due</span></div>
+          <div className="hr-stat"><strong>Publicly</strong><span>Show the latest cleaning via QR</span></div>
         </div>
       </section>
 
@@ -267,12 +294,54 @@ export default function Home() {
             <div className="hr-feature-list">
               <div className="hr-feature"><span className="hr-feature-mark">✓</span><div><strong>Metrics by space</strong><p>Compare kitchens, restrooms, dining areas, or any space you define.</p></div></div>
               <div className="hr-feature"><span className="hr-feature-mark">✓</span><div><strong>Global metrics</strong><p>Understand overall completion and recurring operational problems.</p></div></div>
-              <div className="hr-feature"><span className="hr-feature-mark">✓</span><div><strong>Recurring schedules</strong><p>Run daily, weekly, opening, closing, and service-block routines automatically.</p></div></div>
+              <div className="hr-feature"><span className="hr-feature-mark">✓</span><div><strong>Cleaning schedules</strong><p>Define how often each space should be cleaned so staff always know what is due.</p></div></div>
               <div className="hr-feature"><span className="hr-feature-mark">✓</span><div><strong>Digital records</strong><p>Keep a clear history instead of storing and reviewing paper sheets.</p></div></div>
             </div>
             <div className="hr-actions">
               <Link className="hr-primary" href="/solutions/food-and-beverage-cleaning-dashboard/">See the Dashboard</Link>
               <Link href="/solutions/restaurant-cleaning-management/" style={{ alignSelf: "center", fontWeight: 800, color: "#4027d7" }}>Explore the platform →</Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="hr-section hr-qr-section">
+        <div className="hr-wrap hr-qr-grid">
+          <div className="hr-qr-copy">
+            <p className="hr-eyebrow">Public cleaning status</p>
+            <h2>Replace the ugly paper sheet with a QR your customers can scan.</h2>
+            <p>
+              Every CleanScan space can have its own public status page. Scan the QR to see when the space was last cleaned, without exposing the internal management system.
+            </p>
+            <div className="hr-qr-points">
+              <div className="hr-qr-point"><span>✓</span><div><strong>One QR per space</strong><br />Restroom, kitchen, changing room, dining area, or any other cleaning zone.</div></div>
+              <div className="hr-qr-point"><span>✓</span><div><strong>Always up to date</strong><br />The public page reflects the latest cleaning record automatically.</div></div>
+              <div className="hr-qr-point"><span>✓</span><div><strong>Print-ready PDF</strong><br />Generate the sign from CleanScan and place it directly in the public space.</div></div>
+            </div>
+            <div className="hr-actions">
+              <Link className="hr-primary" href="/pricing/">See Plans by Space</Link>
+            </div>
+          </div>
+
+          <div className="hr-public-card" aria-label="Example public cleaning status page">
+            <div className="hr-public-sheet">
+              <div className="hr-public-top">
+                <span className="hr-public-brand">CleanScan</span>
+                <span className="hr-live-pill">Updated</span>
+              </div>
+              <h3>Guest Restroom</h3>
+              <p className="hr-public-label">Last cleaned</p>
+              <p className="hr-public-time">12:42 PM</p>
+              <p className="hr-public-meta">Today · Cleaning status recorded</p>
+              <div className="hr-qr-row">
+                <div className="hr-qr-box" aria-hidden="true">
+                  {Array.from({ length: 16 }).map((_, index) => <i key={index} />)}
+                </div>
+                <div className="hr-qr-note">
+                  <strong>Scan for cleaning status</strong>
+                  <p>Customers see the latest cleaning information from this space.</p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -321,11 +390,11 @@ export default function Home() {
       <section className="hr-final">
         <div className="hr-wrap">
           <div className="hr-final-box">
-            <h2>Replace the cleaning sheet. Keep the routine. Gain the data.</h2>
-            <p>Tell us how your restaurant works and we’ll show you how to digitize the process without making it harder for the team.</p>
+            <h2>Manage, measure, and show cleaning in every space.</h2>
+            <p>Set the schedule, let staff record the work, track the metrics, and give each public space a QR that shows its latest cleaning status.</p>
             <div className="hr-actions">
               <Link className="hr-primary" href="/contact/">Request a Demo</Link>
-              <Link className="hr-secondary" href="/templates/">Start with a Free Template</Link>
+              <Link className="hr-secondary" href="/pricing/">See Pricing</Link>
             </div>
           </div>
           <p className="hr-legal">
