@@ -3,148 +3,84 @@ import Link from "next/link";
 import SiteHeader from "@/components/site-header";
 
 export const metadata: Metadata = {
-  title: "Free Restaurant Cleaning Checklist Templates (PDF & Printable)",
+  title: "Free Restaurant Cleaning Templates & Logs",
   description:
-    "Free printable restaurant cleaning checklist templates with a downloadable PDF cleaning log for schedules, kitchens, restrooms, opening, closing, and inspection readiness.",
+    "Browse free restaurant cleaning templates by use case: master checklist, cleaning schedule, kitchen, restroom, opening, closing, and inspection readiness.",
   alternates: { canonical: "/templates/" },
 };
 
 const templates = [
   {
-    title: "Restaurant Cleaning Checklist Template",
-    tableTitle: "Restaurant Cleaning Checklist",
+    title: "Restaurant Cleaning Checklist",
     href: "/templates/restaurant-cleaning-checklist/",
-    bestFor: "managers who need one master cleaning routine for the whole restaurant.",
-    tableBestFor: "Whole restaurant routines",
+    bestFor: "A complete restaurant-wide cleaning routine.",
     frequency: "Daily / weekly / monthly",
-    includes:
-      "daily, weekly, and monthly tasks for FOH, BOH, restrooms, kitchen, and shared spaces.",
+    description: "Master checklist covering kitchen, dining, restrooms, storage, waste, and manager review.",
   },
   {
-    title: "Restaurant Cleaning Schedule Template",
-    tableTitle: "Restaurant Cleaning Schedule",
+    title: "Restaurant Cleaning Schedule",
     href: "/templates/restaurant-cleaning-schedule-template/",
-    bestFor: "managers who need to organize cleaning by opening, service, closing, daily, weekly, and monthly frequencies.",
-    tableBestFor: "Task timing and ownership",
+    bestFor: "Organizing when cleaning happens and who owns it.",
     frequency: "Opening / shift / daily / weekly / monthly",
-    includes:
-      "cleaning tasks, areas, frequencies, responsible roles, and recurring manager review.",
+    description: "Schedule tasks by frequency, area, responsible role, and manager verification.",
   },
   {
-    title: "Restroom Cleaning Log Template for Restaurants",
-    tableTitle: "Restroom Cleaning Log",
-    href: "/templates/restroom-cleaning-log/",
-    bestFor: "teams that need time-block restroom checks, supply notes, incidents, corrective actions, and manager verification.",
-    tableBestFor: "Guest restroom checks",
-    frequency: "Every service block",
-    includes:
-      "time, restroom ID, checked tasks, supplies needed, issue found, corrective action, and verification fields.",
-  },
-  {
-    title: "Restaurant Opening Checklist Template",
-    tableTitle: "Opening Checklist",
-    href: "/templates/restaurant-opening-checklist/",
-    bestFor: "shift leads preparing dining room, kitchen, restrooms, supplies, cleaning tasks, and manager checks before service.",
-    tableBestFor: "Start-of-day readiness",
-    frequency: "Every opening shift",
-    includes:
-      "FOH readiness, kitchen setup, restroom opening checks, cleaning review, supplies, equipment, and manager verification.",
-  },
-  {
-    title: "Restaurant Closing Cleaning Checklist Template",
-    tableTitle: "Closing Checklist",
-    href: "/templates/restaurant-closing-cleaning-checklist/",
-    bestFor: "teams that need standardized end-of-day cleaning, waste handling, restroom checks, manager sign-off, and shift handoff.",
-    tableBestFor: "End-of-day handoff",
-    frequency: "Every closing shift",
-    includes:
-      "dining room, kitchen, bar or service counter, restroom, waste, storage, manager sign-off, and next-shift issue reporting.",
-  },
-  {
-    title: "Kitchen Cleaning Checklist for Restaurants",
-    tableTitle: "Kitchen Cleaning Checklist",
+    title: "Kitchen Cleaning Checklist",
     href: "/templates/kitchen-cleaning-checklist/",
-    bestFor: "back-of-house teams organizing daily and weekly cleaning tasks by station, frequency, role, and verification.",
-    tableBestFor: "BOH and sanitation tasks",
-    frequency: "Daily / weekly",
-    includes:
-      "prep areas, cook line, food-contact surfaces, sinks, dish areas, storage, floors, drains, deep cleaning, and manager verification.",
+    bestFor: "Commercial and restaurant kitchen cleaning.",
+    frequency: "Shift / daily / weekly",
+    description: "Prep areas, cookline, sinks, storage, floors, drains, equipment, and kitchen verification.",
   },
   {
-    title: "Restaurant Health Inspection Checklist Template",
-    tableTitle: "Health Inspection Checklist",
+    title: "Restroom Cleaning Log",
+    href: "/templates/restroom-cleaning-log/",
+    bestFor: "Guest restroom checks and cleaning records.",
+    frequency: "Every service block",
+    description: "Track condition, supplies, issues, corrective action, timestamps, and verification.",
+  },
+  {
+    title: "Restaurant Opening Checklist",
+    href: "/templates/restaurant-opening-checklist/",
+    bestFor: "Start-of-day readiness.",
+    frequency: "Every opening shift",
+    description: "FOH, kitchen, restroom, supplies, cleaning, and manager readiness checks.",
+  },
+  {
+    title: "Restaurant Closing Cleaning Checklist",
+    href: "/templates/restaurant-closing-cleaning-checklist/",
+    bestFor: "End-of-day cleaning and handoff.",
+    frequency: "Every closing shift",
+    description: "Dining room, kitchen, service areas, restrooms, waste, storage, and manager sign-off.",
+  },
+  {
+    title: "Restaurant Health Inspection Checklist",
     href: "/templates/restaurant-health-inspection-checklist/",
-    bestFor: "managers reviewing cleaning records, sanitation routines, corrective actions, and follow-up before inspections.",
-    tableBestFor: "Manager review",
+    bestFor: "Inspection preparation and manager review.",
     frequency: "Weekly / monthly",
-    includes:
-      "cleaning records, kitchen routines, restroom checks, storage and waste areas, corrective actions, self-inspections, and documentation review.",
+    description: "Review cleaning records, sanitation routines, corrective actions, and documentation readiness.",
   },
 ];
 
 const faqs = [
   {
-    question: "Is there a free printable restaurant cleaning checklist PDF?",
+    question: "Which cleaning template should I use?",
     answer:
-      "Yes. The free cleaning log PDF can be downloaded directly and used with the restaurant cleaning checklist templates on this page. No account is required to download the PDF.",
+      "Choose the template that matches the job you are trying to control. Use the master checklist for the full restaurant, the schedule for timing and ownership, the kitchen checklist for BOH cleaning, and the restroom log for recurring restroom checks.",
   },
   {
-    question: "What is a restaurant cleaning checklist template?",
+    question: "Are the templates free?",
     answer:
-      "A restaurant cleaning checklist template is a reusable task list that defines what needs to be cleaned, when it should happen, and which areas or roles are responsible.",
+      "Yes. The templates can be used as free starting points, and the printable cleaning log PDF can be downloaded without creating an account.",
   },
   {
-    question: "What is the difference between a cleaning checklist and a cleaning schedule?",
+    question: "Can these templates be used digitally?",
     answer:
-      "A checklist defines the cleaning tasks. A cleaning schedule adds timing, frequency, and ownership so the team knows when each task should happen and who is responsible.",
+      "Yes. CleanScan can turn the same routines into recurring digital tasks with assignments, schedules, completion history, and manager visibility.",
   },
   {
-    question: "Which restaurant cleaning template should I start with?",
+    question: "Can I customize the templates?",
     answer:
-      "Most teams should start with the restaurant cleaning checklist template because it covers daily, weekly, and monthly routines across the whole restaurant, then use the cleaning schedule template to organize timing and ownership.",
-  },
-  {
-    question: "Can I download a printable cleaning log PDF?",
-    answer:
-      "Yes. You can download the printable cleaning log PDF and use it to record the date, time, cleaned area, notes, completed-by name, signature, and verification status.",
-  },
-  {
-    question: "Can I customize these templates?",
-    answer:
-      "Yes. Each template can be adapted to your restaurant layout, cleaning standards, shift structure, and manager review process.",
-  },
-  {
-    question: "Can I use these templates digitally?",
-    answer:
-      "Yes. CleanScan turns restaurant cleaning templates into assigned digital checklists with recurring schedules, completion tracking, and records.",
-  },
-  {
-    question: "Are these templates for health inspection preparation?",
-    answer:
-      "These templates can support inspection readiness by helping restaurants organize cleaning routines, restroom checks, kitchen sanitation tasks, and records. They should still be adapted to your local health code, equipment requirements, and internal SOPs.",
-  },
-];
-
-const exampleTasks = [
-  {
-    area: "Kitchen",
-    task: "Clean and sanitize prep surfaces",
-    frequency: "Daily",
-  },
-  {
-    area: "Restroom",
-    task: "Check supplies and clean fixtures",
-    frequency: "Every service block",
-  },
-  {
-    area: "Dining room",
-    task: "Wipe tables and high-touch points",
-    frequency: "Every shift",
-  },
-  {
-    area: "Closing",
-    task: "Empty waste and verify floors",
-    frequency: "Every closing shift",
+      "Yes. Adapt each template to your layout, equipment, staffing model, cleaning standards, and local requirements.",
   },
 ];
 
@@ -152,147 +88,88 @@ export default function TemplatesIndexPage() {
   return (
     <main>
       <SiteHeader />
+
       <section className="solutions-hero wrap">
-        <p className="article-kicker">Free Templates</p>
-        <h1>Free Restaurant Cleaning Checklist Templates</h1>
+        <p className="article-kicker">Template Library</p>
+        <h1>Free Restaurant Cleaning Templates & Logs</h1>
         <p className="article-lead">
-          Printable restaurant cleaning checklists and schedules for daily, weekly, and monthly
-          routines. Download the free PDF cleaning log or choose a template for kitchens, restrooms,
-          opening, closing, schedules, and health inspection readiness.
+          Choose the cleaning template that matches the job you need to control. Each page below is
+          focused on a specific workflow so you can use the right checklist, schedule, or log without
+          mixing different routines together.
         </p>
         <div className="hero-actions">
           <a className="hero-cta" href="/downloads/cleaning-log.pdf" download>
-            Download Free Printable PDF
+            Download Printable Cleaning Log
           </a>
-          <Link className="outline-cta" href="/templates/restaurant-cleaning-checklist/">
-            View Restaurant Cleaning Checklist
-          </Link>
-          <Link className="outline-cta" href="/templates/restaurant-cleaning-schedule-template/">
-            View Cleaning Schedule
-          </Link>
           <Link className="outline-cta" href="/solutions/restaurant-cleaning-management/">
-            Use Checklists Digitally
+            Use Templates Digitally
           </Link>
-        </div>
-        <p>
-          Free download. No signup required for the PDF. Use the printable version on paper or turn
-          the same routine into recurring digital tasks with CleanScan.
-        </p>
-      </section>
-
-      <section className="section wrap">
-        <div className="section-heading">
-          <p className="article-kicker">Printable PDF</p>
-          <h2>Restaurant cleaning checklist PDF and printable templates</h2>
-          <p>
-            Start with the master restaurant cleaning checklist for a complete daily, weekly, and
-            monthly routine. Then use the restaurant cleaning schedule template to organize when each
-            task happens and who owns it. The printable cleaning log PDF gives staff a simple
-            completion record.
-          </p>
-        </div>
-        <div className="hero-actions">
-          <Link className="hero-cta" href="/templates/restaurant-cleaning-checklist/">
-            Open the Master Checklist
-          </Link>
-          <Link className="outline-cta" href="/templates/restaurant-cleaning-schedule-template/">
-            Open Cleaning Schedule
-          </Link>
-          <a className="outline-cta" href="/downloads/cleaning-log.pdf" download>
-            Download Cleaning Log PDF
-          </a>
         </div>
       </section>
 
       <section className="section wrap" id="choose-template">
         <div className="section-heading">
-          <p className="article-kicker">Template Library</p>
-          <h2>Choose a restaurant cleaning template</h2>
+          <p className="article-kicker">Choose by Use Case</p>
+          <h2>Pick the right template for each cleaning workflow</h2>
+          <p>
+            The library is organized by intent: use the master checklist for the whole restaurant,
+            the schedule for timing and ownership, and the area-specific templates for kitchen,
+            restroom, opening, closing, or inspection workflows.
+          </p>
         </div>
 
         <div className="cards two template-grid">
           {templates.map((item) => (
             <article className="card-v1 template-card" key={item.href}>
               <h2>{item.title}</h2>
-              <p>
-                <strong>Best for:</strong> {item.bestFor}
-              </p>
-              <p>
-                <strong>Frequency:</strong> {item.frequency}
-              </p>
-              <p>
-                <strong>Includes:</strong> {item.includes}
-              </p>
+              <p><strong>Best for:</strong> {item.bestFor}</p>
+              <p><strong>Frequency:</strong> {item.frequency}</p>
+              <p>{item.description}</p>
               <Link className="hero-cta" href={item.href}>
-                Open Template
+                View {item.title}
               </Link>
             </article>
           ))}
         </div>
       </section>
 
-      <section className="section wrap">
-        <div className="section-heading">
-          <p className="article-kicker">Preview</p>
-          <h2>Example tasks included in these templates</h2>
-          <p>
-            Use the printable cleaning log PDF to record when these tasks are completed, who completed
-            them, and whether a manager verified the work.
-          </p>
-        </div>
-
-        <div className="templates-hub-table-wrap">
-          <table className="templates-hub-table">
-            <thead>
-              <tr>
-                <th>Area</th>
-                <th>Example task</th>
-                <th>Frequency</th>
-              </tr>
-            </thead>
-            <tbody>
-              {exampleTasks.map((item) => (
-                <tr key={`${item.area}-${item.task}`}>
-                  <td>{item.area}</td>
-                  <td>{item.task}</td>
-                  <td>{item.frequency}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
-      </section>
-
       <section className="section light">
         <div className="wrap">
           <div className="section-heading">
-            <p className="article-kicker">Comparison</p>
-            <h2>Restaurant cleaning template comparison</h2>
+            <p className="article-kicker">How to Choose</p>
+            <h2>Checklist, schedule, or log?</h2>
           </div>
 
           <div className="templates-hub-table-wrap">
             <table className="templates-hub-table">
               <thead>
                 <tr>
-                  <th>Template</th>
-                  <th>Best for</th>
-                  <th>Frequency</th>
-                  <th>Use in CleanScan</th>
+                  <th>Need</th>
+                  <th>Use</th>
+                  <th>Best page</th>
                 </tr>
               </thead>
               <tbody>
-                {templates.map((item) => (
-                  <tr key={item.href}>
-                    <td>
-                      <Link href={item.href}>{item.tableTitle}</Link>
-                    </td>
-                    <td>{item.tableBestFor}</td>
-                    <td>{item.frequency}</td>
-                    <td>
-                      <Link href="/solutions/restaurant-cleaning-management/">Use in CleanScan</Link>
-                    </td>
-                  </tr>
-                ))}
+                <tr>
+                  <td>Define what must be cleaned across the restaurant</td>
+                  <td>Master checklist</td>
+                  <td><Link href="/templates/restaurant-cleaning-checklist/">Restaurant Cleaning Checklist</Link></td>
+                </tr>
+                <tr>
+                  <td>Define when tasks happen and who owns them</td>
+                  <td>Cleaning schedule</td>
+                  <td><Link href="/templates/restaurant-cleaning-schedule-template/">Restaurant Cleaning Schedule</Link></td>
+                </tr>
+                <tr>
+                  <td>Control BOH and commercial kitchen cleaning</td>
+                  <td>Kitchen checklist</td>
+                  <td><Link href="/templates/kitchen-cleaning-checklist/">Kitchen Cleaning Checklist</Link></td>
+                </tr>
+                <tr>
+                  <td>Record repeated restroom checks</td>
+                  <td>Cleaning log</td>
+                  <td><Link href="/templates/restroom-cleaning-log/">Restroom Cleaning Log</Link></td>
+                </tr>
               </tbody>
             </table>
           </div>
@@ -301,21 +178,18 @@ export default function TemplatesIndexPage() {
 
       <section className="section cta">
         <div className="wrap cta-inner">
-          <p className="article-kicker">From Printable to Digital</p>
-          <h2>Printable templates are useful. Digital checklists are easier to control.</h2>
+          <p className="article-kicker">From Paper to Digital</p>
+          <h2>Use the template first. Digitize the routine when you need control.</h2>
           <p>
-            A printable template helps you define the routine. CleanScan helps you run it every day
-            with assigned tasks, recurring schedules, completion tracking, and digital records.
+            CleanScan turns cleaning routines into recurring tasks with assignees, schedules,
+            completion tracking, digital records, and manager visibility.
           </p>
           <div className="hero-actions cta-actions">
             <Link className="hero-cta" href="/solutions/restaurant-cleaning-management/">
-              Use Templates in CleanScan
+              See CleanScan for Restaurants
             </Link>
-            <Link className="outline-cta" href="/blog/restaurant-cleaning-checklist-app/">
-              See the Checklist App Guide
-            </Link>
-            <Link className="outline-cta" href="/contact/">
-              Request a Demo
+            <Link className="outline-cta" href="/pricing/">
+              View Pricing
             </Link>
           </div>
         </div>
