@@ -32,8 +32,11 @@ export default function Page() {
           <li>Assign owners by role and shift.</li>
           <li>Set verification method and escalation path.</li>
         </ol>
-        <p>Start with this <a href="/templates/restaurant-cleaning-checklist/">restaurant cleaning checklist template</a>.</p>
-        <a className="hero-cta" href="/contact/">Use this schedule digitally</a>
+        <p>
+          Use the <a href="/templates/restaurant-cleaning-schedule-template/">restaurant cleaning schedule template</a> as the scheduling framework.
+          If you still need to define the tasks themselves, start with the <a href="/templates/restaurant-cleaning-checklist/">restaurant cleaning checklist</a>.
+        </p>
+        <a className="hero-cta" href="/solutions/restaurant-cleaning-management/">Use this schedule digitally</a>
       </article>
     </main>
   );
