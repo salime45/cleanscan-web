@@ -94,14 +94,14 @@ export default function Page() {
           <h2>Related guides</h2>
           <ul>
             <li><a href="/blog/workplace-smart-cleaning-software/">Workplace Smart Cleaning Software: What to Look for</a></li>
-            <li><a href="/blog/qr-code-cleaning-checklist-7-days/">QR Code Cleaning Checklist: How to Implement It in 7 Days</a></li>
+            <li><a href="/blog/qr-code-cleaning-checklist-7-days/">QR Code Cleaning Checklist: How to Implement It in 7 Days</a></li>\n            <li><a href="/cleaning-management-software/">Cleaning Management Software</a></li>\n            <li><a href="/cleaning-checklist-app/">Cleaning Checklist App</a></li>
           </ul>
         </section>
 
         <section className="article-cta-box">
           <h2>Move from logs to control</h2>
           <p>CleanScan helps teams transition from paper-based records to practical digital execution control.</p>
-          <a className="hero-cta" href="/contact/">Request a demo</a>
+          <a className="hero-cta" href="/cleaning-management-software/">See Cleaning Management Software</a>
         </section>
       </article>
     </main>
