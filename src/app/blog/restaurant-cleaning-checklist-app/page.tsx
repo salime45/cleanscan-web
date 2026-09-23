@@ -228,7 +228,7 @@ export default function Page() {
             <li><Link href="/templates/restaurant-cleaning-schedule-template/">Restaurant cleaning schedule template</Link></li>
             <li><Link href="/templates/restroom-cleaning-log/">Restroom cleaning log template</Link></li>
             <li><Link href="/templates/kitchen-cleaning-checklist/">Kitchen cleaning checklist</Link></li>
-            <li><Link href="/solutions/restaurant-cleaning-management/">Restaurant cleaning management software</Link></li>
+            <li><Link href="/cleaning-checklist-app/">Cleaning checklist app</Link></li>\n            <li><Link href="/cleaning-schedule-app/">Cleaning schedule app</Link></li>\n            <li><Link href="/cleaning-management-software/">Cleaning management software</Link></li>\n            <li><Link href="/solutions/restaurant-cleaning-management/">Restaurant cleaning management software</Link></li>
           </ul>
         </section>
 
